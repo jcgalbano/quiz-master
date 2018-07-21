@@ -11,4 +11,6 @@ describe Quiz, type: :model do
     quiz_test = FactoryBot.build(:quiz, title: nil)
     expect(quiz_test).not_to be_valid
   end
+  it { should belong_to :course }
+  it { should have_many :questions }
 end

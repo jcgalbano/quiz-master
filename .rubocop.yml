@@ -2,6 +2,6 @@ AllCops:
   Exclude:
     - './bin/*'
 Metrics/LineLength:
-  Max: 130
+  Max: 200
 Documentation:
   Enabled: false

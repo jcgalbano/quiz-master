@@ -15,4 +15,5 @@ describe Question, type: :model do
     quest_test = FactoryBot.build(:question, answer: nil)
     expect(quest_test).not_to be_valid
   end
+  it { should belong_to(:quiz) }
 end
