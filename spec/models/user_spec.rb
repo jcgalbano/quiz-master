@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-
-RSpec.describe User, type: :model do
+require 'cancan/matchers'
+describe User, type: :model do
   # same test for sign up because FactoryBot.create(:user)
   # saves a user in the db and expects it to be_valid
   # which happens on sign_up
@@ -50,8 +50,31 @@ RSpec.describe User, type: :model do
 
     expect(user_test).not_to be_valid
   end
+  it 'has role: user if role is not explicitly initialized' do
+    # default user factory has no role initialized
+    user_test = FactoryBot.build(:user)
+
+    expect(user_test.role).to eq('user')
+  end
+
   it { should validate_uniqueness_of(:user_name) }
   # email is case_insensitive by default in devise and in implementation
   # so we need to test its uniqueness with a case_insensitive declaration
   it { should validate_uniqueness_of(:email).case_insensitive }
+
+  # test roles w/ cancancan abilities
+  describe 'abilities' do
+    context 'when is an admin' do
+      user_test = FactoryBot.build(:user, role: 'admin')
+      ability = Ability.new(user_test)
+
+      it { expect(ability).to be_able_to(:destroy, User.new) }
+    end
+    context 'when is a normal user' do
+      user_test = FactoryBot.build(:user, role: 'user')
+      ability = Ability.new(user_test)
+      # expects a user to not be able to do any action on resource User
+      it { expect(ability).not_to be_able_to(:manage, User.new) }
+    end
+  end
 end
