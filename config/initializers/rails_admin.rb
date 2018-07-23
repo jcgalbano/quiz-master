@@ -39,4 +39,27 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+  config.model User do
+    weight -1
+  end
+  config.model Course do
+    edit do
+      exclude_fields :user
+      exclude_fields :quizzes
+    end
+    weight 0
+  end
+  config.model Quiz do
+    edit do
+      exclude_fields :user
+      exclude_fields :questions
+    end
+    weight 1
+  end
+  config.model Question do
+    edit do
+      exclude_fields :user
+    end
+    weight 2
+  end
 end

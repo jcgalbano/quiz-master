@@ -9,12 +9,12 @@ class Ability
     user ||= User.new # guest user (not logged in)
     can :access, :rails_admin
     can :dashboard, :all
-    if user&.admin?
+    if user.admin?
       can :manage, :all
     else
-      can :manage, Course
-      can :manage, Quiz
-      can :manage, Question
+      can :manage, Course, user_id: user.id
+      can :manage, Quiz, user_id: user.id
+      can :manage, Question, user_id: user.id
     end
     #
     # The first argument to `can` is the action you are giving the user
