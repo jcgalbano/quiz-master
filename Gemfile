@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
@@ -13,10 +12,12 @@ gem 'ckeditor'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise' # for authentication
 gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master' # for factory field generations
+gem 'figaro' # used for env variables in production
 gem 'haml-rails', '~> 1.0' # ease of use of haml in project
 gem 'humanize'
 gem 'jbuilder', '~> 2.5'
 gem 'materialize-sass', '~> 1.0.0.rc2' # my favorite css framework lol
+gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.6'
 gem 'rails_admin', '~> 1.3'

@@ -6,7 +6,7 @@ A simple web app that implements a question-answer platform with basic CRUD func
 
 <img src="https://i.pinimg.com/originals/5a/01/29/5a0129d23531e5562d3a3f07daa074b6.jpg" height="700">
 
-## How to run
+## Setup
 * To be added
 
 ## Recommendations/Improvements:
@@ -15,7 +15,7 @@ A simple web app that implements a question-answer platform with basic CRUD func
 * Turbolinks - under the time contraints I wasn't able to implement this. A better solution to having haml switching on the course of a quiz is an Ajax implementation.
 * Improve UI/UX - I wanted the theme to be a dungeon crawler/indie game theme. This, I believe will keep the focus and attention of users from a wider audience in terms of age. Also, game aesthetics never get old.
 
-##Specs:
+## Specs:
 
 * Ruby version => 2.4.1
 * Rails version => '~> 5.1.6'
