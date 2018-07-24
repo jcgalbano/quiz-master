@@ -38,5 +38,6 @@ describe Question, type: :model do
   end
 
   # testing associations
+  it { should belong_to(:user) }
   it { should belong_to(:quiz) }
 end

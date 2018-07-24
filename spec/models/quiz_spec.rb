@@ -31,6 +31,7 @@ describe Quiz, type: :model do
   end
 
   # testing associations
+  it { should belong_to :user }
   it { should belong_to :course }
   it { should have_many :questions }
 end

@@ -23,7 +23,6 @@ RailsAdmin.config do |config|
   ## == Gravatar integration ==
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
-
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
@@ -40,26 +39,26 @@ RailsAdmin.config do |config|
     # history_show
   end
   config.model User do
-    weight -1
+    weight 0
   end
   config.model Course do
     edit do
       exclude_fields :user
       exclude_fields :quizzes
     end
-    weight 0
+    weight 1
   end
   config.model Quiz do
     edit do
       exclude_fields :user
       exclude_fields :questions
     end
-    weight 1
+    weight 2
   end
   config.model Question do
     edit do
       exclude_fields :user
     end
-    weight 2
+    weight 3
   end
 end

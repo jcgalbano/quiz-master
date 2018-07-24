@@ -1,0 +1,8 @@
+%p
+  %span= Question
+  %span= @question.content
+
+= form_tag question_path(@question.id, @question.id), method: "get" do
+  = text_field_tag(:ans)
+  = submit_tag("Submit")
+

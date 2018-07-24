@@ -7,6 +7,10 @@ class Question < ApplicationRecord
   belongs_to :user
   belongs_to :quiz
 
+  def next
+    self.class.where('id > ?', id).first
+  end
+
   rails_admin do
     edit do
       field :user_id, :hidden do

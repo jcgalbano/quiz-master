@@ -1,0 +1,26 @@
+// Place all the styles related to the Courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$mat-ind:#0E0B16;
+$uv-sub-purp:#4717F6;
+html{
+  background-color:$mat-ind;
+}
+.title{
+  font-family:"Press Start 2P";
+  color:white;
+  text-align:center;
+}
+.event-container{
+  display: table;
+  height: 100vh;
+}
+.event-box{
+  display: table-cell;
+  vertical-align: middle;
+}
+.event-card{
+  text-align:center;
+  padding-top:100px;
+  padding-bottom:100px;
+}

@@ -13,6 +13,7 @@ class Ability
       can :manage, :all
     else
       can :manage, Course, user_id: user.id
+      can :read, Course
       can :manage, Quiz, user_id: user.id
       can :manage, Question, user_id: user.id
     end

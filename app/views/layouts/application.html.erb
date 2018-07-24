@@ -5,10 +5,20 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Press+Start+2P">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <section>
+      <div class='container event-container'>
+        <div class= 'event-box'>
+          <p class='title flow-text'>QuizMaster!</p>
+          <div class= 'card event-card'>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
