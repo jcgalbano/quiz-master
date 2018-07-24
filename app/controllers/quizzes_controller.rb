@@ -3,8 +3,14 @@
 class QuizzesController < ApplicationController
   def index
     session[:score] = 0
-    @random_quiz = Quiz.where(course_id: params[:id]).sample
-    @from_course = Course.find(params[:id])
-    @creator = User.find(@random_quiz.user_id)
+    puts params
+    @random_quiz = Quiz.where(course_id: params[:id])
+    if @random_quiz.empty?
+      render 'empty'
+    else
+      @random_quiz = @random_quiz.sample
+      @from_course = Course.find(params[:id])
+      @creator = User.find(@random_quiz.user_id)
+    end
   end
 end
