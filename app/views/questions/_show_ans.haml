@@ -2,11 +2,19 @@
 %div#modal.modal
   %div.modal-content
     -if @incorrect
-      %h4 Your Answer is Incorrect!
+      %h4
+        %span Your Answer is
+        %span.red-text Incorrect!
       %p
         %span The correct answer is
         %span= @prev_ans
     -else
-      %h4 Your Answer is Correct!
+      %h4
+        %span Your Answer is
+        %span.green-text Correct!
+      %p
+        %span The correct answer is
+        %span= @prev_ans
+
     %div.modal-footer
       %a{href:'#!',class:'modal-action modal-close waves-effect waves-green btn-flat'}Close

@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'devise' # for authentication
 gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master' # for factory field generations
 gem 'haml-rails', '~> 1.0' # ease of use of haml in project
+gem 'humanize'
 gem 'jbuilder', '~> 2.5'
 gem 'materialize-sass', '~> 1.0.0.rc2' # my favorite css framework lol
 gem 'puma', '~> 3.7'

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class QuestionsController < ApplicationController
+  include QuestionsHelper
   # meet all requests to Question with show method
   # to keep code concise
   def show
@@ -69,7 +70,12 @@ class QuestionsController < ApplicationController
       # make incorrect to be true
       # for the recall to show to know if
       # the previous answer was incorrect
-      @incorrect = true
+      # unless number_checker returns true
+      if case_checker(ans, attempt)
+        session[:score] += 1
+      else
+        @incorrect = true
+      end
     end
   end
 end
