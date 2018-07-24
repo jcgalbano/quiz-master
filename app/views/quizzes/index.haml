@@ -1,7 +1,7 @@
-%p
-  %span You will be answering
-  %span=@random_quiz.title
-%p
-  %span By Quizmaster
-  %span= @creator.user_name
-%a{href: question_path(id: @random_quiz.id), class:'waves-effect waves-light btn purple darken-1 def-btns'} Start Quiz!
+%p You have been challenged by Quizmaster
+%p.flow-text.game-text=@creator.user_name
+
+%p You will be answering his Quiz
+%p.flow-text.game-text=@random_quiz.title
+
+%a{href: question_path(id: @random_quiz.id), class:'waves-effect waves-light btn purple darken-1'} Start Quiz

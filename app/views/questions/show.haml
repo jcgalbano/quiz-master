@@ -1,8 +1,6 @@
 %p
   %span= Question
   %span= @question.content
-
-= form_tag question_path(@question.id, @question.id), method: "get" do
-  = text_field_tag(:ans)
-  = submit_tag("Submit")
-
+= form_tag question_path(@curr_quiz_id, @question.id), method: "get" do
+  = text_field_tag :ans, '', class: 'ans-area'
+  = submit_tag "Submit Answer", class:'btn purple darken-1 white-text'
