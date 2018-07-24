@@ -9,7 +9,7 @@ class QuizzesController < ApplicationController
     # if the quizzes under that topic is empty
     if @random_quiz.empty?
       # show the results empty page
-      render 'empty'
+      render 'shared/empty'
     else
       # if there are existing quizzes under the selected topic
       # get a random quiz

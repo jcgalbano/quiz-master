@@ -1,3 +1,4 @@
+//= require rails_admin/custom/ckeditor_ajax
 $(document).on('ready pjax:success', function() {
   handleActiveBase();
   function handleActiveBase() {

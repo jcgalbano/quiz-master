@@ -57,6 +57,8 @@ RailsAdmin.config do |config|
   end
   config.model Question do
     edit do
+      field :content, :ck_editor
+      field :answer
       exclude_fields :user
     end
     weight 3

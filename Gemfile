@@ -9,6 +9,7 @@ end
 
 ruby '2.4.1'
 gem 'cancancan', '~> 2.0' # for authorization
+gem 'ckeditor'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise' # for authentication
 gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master' # for factory field generations
@@ -17,9 +18,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'materialize-sass', '~> 1.0.0.rc2' # my favorite css framework lol
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.6'
-gem 'rails_admin', github: 'sferik/rails_admin' # used rails_admin cause it's a joy to integrate w/ other imp gems
+gem 'rails_admin', '~> 1.3'
 gem 'rails_admin_rollincode', '~> 1.0' # trusty flat theme for rails_admin
 gem 'rubocop', require: false # my favorite linter to keep my code strict to community guidelines and practices
+gem 'sanitize' # relied on a third party gem for sanitizing html for easier config
 gem 'sass-rails', '~> 5.0'
 gem 'sqlite3'
 gem 'turbolinks', '~> 5'
