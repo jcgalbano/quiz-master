@@ -4,7 +4,7 @@ A simple web app that implements a question-answer platform with basic CRUD func
 ## Introduction
   In the creation of this exercise I intended to create a platform/app wherein I wanted it to be an 'open-source' way of learning. Its goal is to be able to improve stock knowledge through a wide array of topics provided by the community. A digestible bite of knowledge if you will. Afterall an approximate amount may not lead us to the truth, but may very well make us closer to it.
 
-![adventure time comic](https://i.pinimg.com/originals/5a/01/29/5a0129d23531e5562d3a3f07daa074b6.jpg){:height="50%" width="50%"}
+<img src="https://i.pinimg.com/originals/5a/01/29/5a0129d23531e5562d3a3f07daa074b6.jpg" height="700">
 
 ## How to run
 * To be added
