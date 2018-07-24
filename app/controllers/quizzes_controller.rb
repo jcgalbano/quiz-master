@@ -14,6 +14,10 @@ class QuizzesController < ApplicationController
       # if there are existing quizzes under the selected topic
       # get a random quiz
       @random_quiz = @random_quiz.sample
+      # get the number of questions on that quiz and
+      # attach to the session for display on game over screen
+      questions = Question.where(quiz_id: @random_quiz.id)
+      session[:total] = questions.count unless questions.empty?
       # gets the random quiz's associations for possible use
       @from_course = Course.find(params[:id])
       @creator = User.find(@random_quiz.user_id)

@@ -25,7 +25,6 @@ gem 'rails_admin_rollincode', '~> 1.0' # trusty flat theme for rails_admin
 gem 'rubocop', require: false # my favorite linter to keep my code strict to community guidelines and practices
 gem 'sanitize' # relied on a third party gem for sanitizing html for easier config
 gem 'sass-rails', '~> 5.0'
-gem 'sqlite3'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
