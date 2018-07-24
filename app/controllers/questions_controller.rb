@@ -9,6 +9,7 @@ class QuestionsController < ApplicationController
     @incorrect = false
     # current quiz id
     @curr_quiz_id = params[:id]
+    render 'shared/empty' if Question.find_by(quiz_id: @curr_quiz_id).nil?
     # if nxt_qst is nil, either the question is the first question or last
     nxt_qst_exist = params[:format]
 

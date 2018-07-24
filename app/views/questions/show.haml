@@ -1,6 +1,7 @@
+- require 'sanitize'
 %p
   %span= Question
-  %span= @question.content
+  %span= raw(Sanitize.fragment(@question.content, Sanitize::Config::RELAXED))
 = form_tag question_path(@curr_quiz_id, @question.id), method: "get" do
   = text_field_tag :ans, '', class: 'ans-area'
   = submit_tag "Submit Answer", class:'btn purple darken-1 white-text', id:'sub-btn'
