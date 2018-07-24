@@ -1,0 +1,12 @@
+%a{href: '#modal1', class:'modal-trigger'}
+%div#modal.modal
+  %div.modal-content
+    -if @incorrect
+      %h4 Your Answer is Incorrect!
+      %p
+        %span The correct answer is
+        %span= @prev_ans
+    -else
+      %h4 Your Answer is Correct!
+    %div.modal-footer
+      %a{href:'#!',class:'modal-action modal-close waves-effect waves-green btn-flat'}Close

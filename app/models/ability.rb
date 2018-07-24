@@ -4,36 +4,23 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    # Define abilities for the passed in user here. For example:
-    #
-    user ||= User.new # guest user (not logged in)
+    user ||= User.new
+    # anyone who's signed in can access rails_admin
+    # and the dashboard
     can :access, :rails_admin
     can :dashboard, :all
     if user.admin?
+      # only a website admin can manage everything
       can :manage, :all
     else
+      # a normal user can only manage his courses
       can :manage, Course, user_id: user.id
+      # but is able to refer to all courses
+      # for making quizzes under course topics of other people
       can :read, Course
+      # can manage only his quizzes and questions
       can :manage, Quiz, user_id: user.id
       can :manage, Question, user_id: user.id
     end
-    #
-    # The first argument to `can` is the action you are giving the user
-    # permission to do.
-    # If you pass :manage it will apply to every action. Other common actions
-    # here are :read, :create, :update and :destroy.
-    #
-    # The second argument is the resource the user can perform the action on.
-    # If you pass :all it will apply to every resource. Otherwise pass a Ruby
-    # class of the resource.
-    #
-    # The third argument is an optional hash of conditions to further filter the
-    # objects.
-    # For example, here the user can only update published articles.
-    #
-    #   can :update, Article, :published => true
-    #
-    # See the wiki for details:
-    # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
   end
 end

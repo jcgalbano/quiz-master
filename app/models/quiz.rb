@@ -1,12 +1,7 @@
 # frozen_string_literal: true
 
 class Quiz < ApplicationRecord
-  validates :title, presence: true
-
-  belongs_to :user
-  belongs_to :course
-  has_many :questions
-
+  # make rails_admin associate the current_user's id to the models
   rails_admin do
     edit do
       field :user_id, :hidden do
@@ -16,4 +11,12 @@ class Quiz < ApplicationRecord
       end
     end
   end
+
+  # validations
+  validates :title, presence: true
+
+  # associations
+  belongs_to :user
+  belongs_to :course
+  has_many :questions
 end

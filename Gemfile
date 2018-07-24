@@ -8,18 +8,18 @@ git_source(:github) do |repo_name|
 end
 
 ruby '2.4.1'
-gem 'cancancan', '~> 2.0'
+gem 'cancancan', '~> 2.0' # for authorization
 gem 'coffee-rails', '~> 4.2'
-gem 'devise'
-gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
-gem 'haml-rails', '~> 1.0'
+gem 'devise' # for authentication
+gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master' # for factory field generations
+gem 'haml-rails', '~> 1.0' # ease of use of haml in project
 gem 'jbuilder', '~> 2.5'
-gem 'materialize-sass', '~> 1.0.0.rc2'
+gem 'materialize-sass', '~> 1.0.0.rc2' # my favorite css framework lol
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.6'
-gem 'rails_admin', github: 'sferik/rails_admin'
-gem 'rails_admin_rollincode', '~> 1.0'
-gem 'rubocop', require: false
+gem 'rails_admin', github: 'sferik/rails_admin' # used rails_admin cause it's a joy to integrate w/ other imp gems
+gem 'rails_admin_rollincode', '~> 1.0' # trusty flat theme for rails_admin
+gem 'rubocop', require: false # my favorite linter to keep my code strict to community guidelines and practices
 gem 'sass-rails', '~> 5.0'
 gem 'sqlite3'
 gem 'turbolinks', '~> 5'
